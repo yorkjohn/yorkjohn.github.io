@@ -24,18 +24,18 @@ author:
   avatar           : "with_bird.jpg"
   name             : "Huaijun Qiu"
   position         : "Associate Professor"
-  affiliation      : "Department of Computer Science and Technology, Shenyang Aerospace University"
+ 
   # Contact information
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
   location         : "Earth"
-  employer         : "Red Brick University"
+  employer         : "Shenyang Aerospace University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "20220071@sau.edu.cn" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=Fn4e0dgAAAAJ&hl=en&oi=ao"
   impactstory      : # URL
   orcid            : "http://orcid.org/yourorcidurl"
   semantic         : # URL
