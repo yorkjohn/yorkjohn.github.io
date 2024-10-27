@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Huaijun Qiu's Personal Website"
+title                    : "Personal Website"
 title_separator          : "-"
 name                     : &name "Huaijun Qiu"
 description              : &description "personal description"
@@ -21,7 +21,7 @@ repository               : "yorkjohn/yorkjohn.github.io" # GitHub username/repo-
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "with_bird.jpg"
   name             : "Huaijun Qiu"
   position         : "Assistant Professor"
   affiliation      : "Department of Computer Science and Technology, Shenyang Aerospace University"
