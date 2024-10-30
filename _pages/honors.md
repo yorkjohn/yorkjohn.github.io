@@ -64,7 +64,7 @@ blogger-color: "#F37100"
 
 ## Fundings  
 - **Research and Implementation of Drone Geolocation Based on Domestic Embedded Platforms**  
-  Amount: 30,000 CNY  
+  Amount: 30,000 CNY 
   Year: 2023  
   Description: Research and implementation project focusing on geolocation technologies for drones using domestic embedded platforms.
 
