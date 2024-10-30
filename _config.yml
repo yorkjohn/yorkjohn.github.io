@@ -22,22 +22,22 @@ repository               : "yorkjohn/yorkjohn.github.io" # GitHub username/repo-
 author:
   # Biographic information
   avatar           : "with_bird.jpg"
-  name             : "Huaijun Qiu"
+  name             : "Dr. Huaijun Qiu(john)"
   position         : "Associate Professor"
  
   # Contact information
   pronouns         : # example: "she/her"  
-  bio              : "Research in Industry & Academic"
+  bio              : "Research in Academic & Industry"
   location         : "Shenyang, China"
   employer         : "Shenyang Aerospace University"
   uri              : # URL
-  email            : "20220071@sau.edu.cn" 
+  email            : "20220071 at email dot sau dot edu dot cn" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=Fn4e0dgAAAAJ&hl=en&oi=ao"
   impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0009-0007-2201-6264"
   semantic         : # URL
   # pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
@@ -46,7 +46,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "yorkjohn"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -295,7 +295,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: Etc/UTC # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: "Asia/Shanghai"
 
 
 # Plugins

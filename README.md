@@ -1,75 +1,84 @@
-# Academic Pages
-**Academic Pages is a Github Pages template for academic websites.**
+*Edits by me (weiglemc) below.  For [original README](https://github.com/academicpages/academicpages.github.io/blob/master/README.md) see [academicpages.github.io](https://github.com/academicpages/academicpages.github.io).*
 
-# Getting Started
+A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
+
+## Setup and Customization Guides
+
+*Much thanks to [Rob Williams](https://jayrobwilliams.com) for his setup posts!*
+
+* [Building an Academic Website](https://jayrobwilliams.com/posts/2020/06/academic-website/)
+* [Customizing an Academic Website](https://jayrobwilliams.com/posts/2020/07/customizing-website)
+* [Adding Content to an Academic Website](https://jayrobwilliams.com/posts/2020/08/website-content/)
+* [Website GitHub repo](https://github.com/jayrobwilliams/jayrobwilliams.github.io)
+
+I used <https://realfavicongenerator.net> to generate the needed favicons (it's a lot more complicated than it used to be...).
+
+## Customizations
+
+Some of my customizations:
+
+* icons in the sidebar: `_includes/author-profile.html`
+* follow icons (in footer): `_includes/footer.html`
+* share icons (at bottom of individual pages): `_includes/social-share.html`
+* colors and buttons:
+   * `_sass/_variables.scss` - look for comments `/* ODU colors: https://www.odu.edu/facultystaff/communication/toolkit/identity-standards/palette-fonts */` and `/* brands */`
+   * `_sass/_buttons.scss` - look for comment `/* my button */`
+ 
+Rob Williams (author of the guides above) had a couple of commits that replaced his Twitter icons and links with Mastodon, see ['we'll meet again'](https://github.com/jayrobwilliams/jayrobwilliams.github.io/commit/2dbefbb507702b981d5719f1da06c8f57b0872b5) and ['bye bye birdie](https://github.com/jayrobwilliams/jayrobwilliams.github.io/commit/1d759370f1c973f16f3253f24d3bc412e41a1576)
+
+## Debugging
+
+If the page doesn't regenerate automatically after a new commit, check for build or deployment errors.  Check the [pages-build-deployment](https://github.com/weiglemc/weiglemc.github.io/actions/workflows/pages/pages-build-deployment) log in the [Actions](https://github.com/weiglemc/weiglemc.github.io/actions) tab.
+
+## Generating Publication Pages
+
+I adapted code from PmWiki's [BibtexRef Cookbook](https://www.pmwiki.org/wiki/Cookbook/BibtexRef) to read in a BibTeX file and generate various Markdown files for the website.  The files are all in the [markdown_generator](markdown_generator/) folder in this repo (see [README](markdown_generator/readme.md)).
+
+* [`bib2md.py`](markdown_generator/bib2md.py) - driver script to generate Markdown files with publication entries
+   * update with input BibTeX file, years of publications to generate, type of publications, and definition of "recent"
+   * current version writes files directly into [_publications](_publications/) folder
+* [`bib2md-students.py`](markdown_generator/bib2md-students.py) - driver script to generate Markdown file with student PhD dissertations and MS theses
+  * update with bibtag for new students
+  * I copy/paste lines into [_pages/students.md](_pages/students.md)
+* [`bibtexref3_md.py`](markdown_generator/bibtexref3_md.py) - script adapted from PmWiki cookbook to generate Markdown
+  * should only need updating to change appearance of reference line output
+
+These have all been converted from PHP to Python.
+
+## To run locally on MacOS
+
+Note: *see below for installation on an M1 Mac*
+
+1. Install Git and Ruby via the Xcode Command Line Tools by running `xcode-select --install` 
+1. Install [Bundler](https://bundler.io/), a package manager for Ruby by running `gem install bundler`
+1. Clone the repo and make updates
+1. Move to the local cloned directory and run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
+1. Run `bundle exec jekyll serve` to generate the HTML and serve it from `localhost:4000`. The local server will automatically rebuild and refresh the pages on change.
+
+Installing on M1
+
+* Duplicate the /Applications/Terminal app and rename it Terminal-Rosetta
+* Use "Get Info" and check "Open using Rosetta"
+* Open this new Terminal app to install Bundler
+* Install Bundler with `arch -x86_64 sudo gem install bundle`
+* Move to the local cloned directory and install the gems with `arch -x86_64 bundle install`
+* If there are errors, delete Gemfile.lock and try `arch -x86_64 bundle install` again
+* If that doesn't work, uninstall the offending gem `sudo gem uninstall package_name` and try `arch -x86_64 bundle install` again.
+* Make sure to use Terminal-Rosetta when starting the server with `bundle exec jekyll serve`
+
+# Instructions
 
 1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Click the "Use this template" button in the top right.
-1. On the "New repository" page, enter your repository name as "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and add your content.
-1. Upload any files (like PDFs, .zip files, etc.) to the `files/` directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.
+1. Fork [academicpages repo](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
+1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
+1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
+1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
 1. Check status by going to the repository settings, in the "GitHub pages" section
 1. (Optional) Use the Jupyter notebooks or python scripts in the `markdown_generator` folder to generate markdown files for publications and talks from a TSV file.
 
 See more info at https://academicpages.github.io/
 
-## Running locally
+# Changelog -- bugfixes and enhancements
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
 
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed
-    
-    On most Linux distribution and [Windows Subsystem Linux](https://learn.microsoft.com/en-us/windows/wsl/about) the command is:
-    ```bash
-    sudo apt install ruby-dev ruby-bundler nodejs
-    ```
-    On MacOS the commands are:
-    ```bash
-    brew install ruby
-    brew install node
-    gem install bundler
-    ```
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
-
-If you are running on Linux it may be necessary to install some additional dependencies prior to being able to run locally: `sudo apt install build-essential gcc make`
-
-## Using Docker
-
-Working from a different OS, or just want to avoid installing dependencies? You can use the provided `Dockerfile` to build a container that will run the site for you if you have [Docker](https://www.docker.com/) installed.
-
-Start by build the container:
-
-```bash
-docker build -t jekyll-site .
-```
-
-Next, run the container:
-```bash
-docker run -p 4000:4000 --rm -v $(pwd):/usr/src/app jekyll-site
-```
-
-# Maintenance
-
-Bug reports and feature requests to the template should be [submitted via GitHub](https://github.com/academicpages/academicpages.github.io/issues/new/choose). For questions concerning how to style the template, please feel free to start a [new discussion on GitHub](https://github.com/academicpages/academicpages.github.io/discussions).
-
-This repository was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License (see LICENSE.md). It is currently being maintained by [Robert Zupko](https://github.com/rjzupkoii) and additional maintainers would be welcomed.
-
-## Bugfixes and enhancements
-
-If you have bugfixes and enhancements that you would like to submit as a pull request, you will need to [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) this repository as opposed to using it as a template. This will also allow you to [synchronize your copy](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) of template to your fork as well.
-
-Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch.
-
----
-<div align="center">
-    
-![pages-build-deployment](https://github.com/academicpages/academicpages.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
-[![GitHub contributors](https://img.shields.io/github/contributors/academicpages/academicpages.github.io.svg)](https://github.com/academicpages/academicpages.github.io/graphs/contributors)
-[![GitHub release](https://img.shields.io/github/v/release/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/releases/latest)
-[![GitHub license](https://img.shields.io/github/license/academicpages/academicpages.github.io?color=blue)](https://github.com/academicpages/academicpages.github.io/blob/master/LICENSE)
-
-[![GitHub stars](https://img.shields.io/github/stars/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io)
-[![GitHub forks](https://img.shields.io/github/forks/academicpages/academicpages.github.io)](https://github.com/academicpages/academicpages.github.io/fork)
-</div>
+To support this, all changes to the underlying code appear as a closed issue with the tag 'code change' -- get the list [here](https://github.com/academicpages/academicpages.github.io/issues?q=is%3Aclosed%20is%3Aissue%20label%3A%22code%20change%22%20). Each issue thread includes a comment linking to the single commit or a diff across multiple commits, so those with forked repositories can easily identify what they need to patch.
