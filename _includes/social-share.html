@@ -1,21 +1,103 @@
 {% include base_path %}
 
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
+    <style>  
+        /* Modal styles */  
+        #wechat-qr-modal {  
+            position: fixed;  
+            z-index: 1000;  
+            left: 0;  
+            top: 0;  
+            width: 100%;  
+            height: 100%;  
+            background-color: rgba(0, 0, 0, 0.5);  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+        }  
+
+        .modal-content {  
+            background-color: #fff;  
+            padding: 20px;  
+            border-radius: 5px;  
+            text-align: center;  
+        }  
+
+        .close {  
+            color: #aaa;  
+            float: right;  
+            font-size: 28px;  
+            font-weight: bold;  
+        }  
+
+        /* Button styles */  
+        .btn {  
+            display: inline-flex;  
+            align-items: center;  
+            padding: 10px 15px;  
+            color: white;  
+            text-decoration: none;  
+            border-radius: 5px;  
+            margin: 5px;  
+            font-size: 16px;  
+        }  
+
+        .btn--weibo {  
+            background-color: #e81c1c; /* Red color for Weibo */  
+        }  
+
+        .btn--wechat {  
+            background-color: #1aad19; /* Green color for WeChat */  
+        }  
+
+        .btn i {  
+            margin-right: 5px; /* Space between icon and text */  
+        }  
+    </style>  
+</head>  
+<body>  
+
 <section class="page__share">  
-  <h4 class="page__share-title">Share On</h4>  
+    <h4 class="page__share-title">Share On</h4>  
 
-  <a href="https://service.weibo.com/share/share.php?url={{ base_path }}{{ page.url }}" class="btn btn--weibo" title="Share on Weibo">  
-    <i class="fab fa-fw fa-weibo" aria-hidden="true"></i><span> Weibo</span>  
-  </a>  
+    <!-- 新浪微博分享链接 -->  
+    <a href="https://service.weibo.com/share/share.php?url={{ base_path }}{{ page.url }}" class="btn btn--weibo" target="_blank" title="Share on Weibo">  
+        <i class="fab fa-weibo" aria-hidden="true"></i><span> Weibo</span>  
+    </a>  
 
-  <a href="javascript:void(0);" class="btn btn--wechat" title="Share on WeChat" onclick="shareToWeChat('{{ base_path }}{{ page.url }}')">  
-    <i class="fab fa-fw fa-wechat" aria-hidden="true"></i><span> WeChat</span>  
-  </a>  
+    <!-- 微信分享按钮 -->  
+    <a href="javascript:void(0);" class="btn btn--wechat" title="Share on WeChat" onclick="showQRCode('{{ base_path }}{{ page.url }}')">  
+        <i class="fab fa-weixin" aria-hidden="true"></i><span> WeChat</span>  
+    </a>  
+
+    <!-- 显示二维码的模态框 -->  
+    <div id="wechat-qr-modal" style="display:none;">  
+        <div class="modal-content">  
+            <span class="close" onclick="closeQRCode()">&times;</span>  
+            <h4>Scan to share on WeChat</h4>  
+            <img id="wechat-qr" src="" alt="WeChat QR Code" />  
+        </div>  
+    </div>  
 </section>  
 
 <script>  
-  function shareToWeChat(url) {  
-    // Create a WeChat sharing link  
-    alert("Please scan the QR code to share: " + url);  
-    // You can implement a QR code generation here or redirect to a QR code service  
-  }  
-</script>
+    // 显示二维码模态框  
+    function showQRCode(url) {  
+        const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(url)}&size=200x200`;  
+        document.getElementById('wechat-qr').src = qrCodeUrl; // 使用二维码 API 生成二维码  
+        document.getElementById('wechat-qr-modal').style.display = 'block'; // 显示模态框  
+    }  
+
+    // 关闭二维码模态框  
+    function closeQRCode() {  
+        document.getElementById('wechat-qr-modal').style.display = 'none';  
+    }  
+</script>  
+
+</body>  
+</html>
