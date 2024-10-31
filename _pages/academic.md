@@ -40,7 +40,7 @@ We are working on several research topics in the field of **Machine Learning**, 
   </tr>  
   <tr>  
     <td style="border: none; text-align: left; vertical-align: top;">  
-      <img src="../images/drone.png" alt="Smart Security">  
+      <img src="../images/drone.jpg" alt="Smart Security">  
     </td>  
     <td style="border: none; text-align: left; vertical-align: top;">  
        Environmental factors like rain, fog, and low visibility can disrupt GPS signals, so we will develop robust algorithms that enhance drone positioning systems. By integrating multimodal sensing, we can leverage both visual and inertial information to improve the accuracy and robustness of drone navigation. 
