@@ -3,17 +3,16 @@
 <section class="page__share">  
   <h4 class="page__share-title">Share On</h4>  
 
-  <!-- 新浪微博分享链接 -->  
   <a href="https://service.weibo.com/share/share.php?url={{ base_path }}{{ page.url }}" class="btn btn--weibo" target="_blank" title="Share on Weibo">  
     <i class="fab fa-weibo" aria-hidden="true"></i><span> Weibo</span>  
   </a>  
 
-  <!-- 微信分享按钮 -->  
+
   <a href="javascript:void(0);" class="btn btn--wechat" title="Share on WeChat" onclick="showQRCode('{{ base_path }}{{ page.url }}')">  
     <i class="fab fa-wechat" aria-hidden="true"></i><span> WeChat</span>  
   </a>  
 
-  <!-- 显示二维码的模态框 -->  
+
   <div id="wechat-qr-modal" style="display:none;">  
     <div class="modal-content">  
       <span class="close" onclick="closeQRCode()">&times;</span>  
@@ -24,21 +23,20 @@
 </section>  
 
 <script>  
-  // 显示二维码模态框  
+  
   function showQRCode(url) {  
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(url)}&size=200x200`;  
-    document.getElementById('wechat-qr').src = qrCodeUrl; // 使用二维码 API 生成二维码  
-    document.getElementById('wechat-qr-modal').style.display = 'block'; // 显示模态框  
+    document.getElementById('wechat-qr').src = qrCodeUrl; 
+    document.getElementById('wechat-qr-modal').style.display = 'block'; 
   }  
 
-  // 关闭二维码模态框  
   function closeQRCode() {  
     document.getElementById('wechat-qr-modal').style.display = 'none';  
   }  
 </script>  
 
 <style>  
-  /* 模态框样式 */  
+
   #wechat-qr-modal {  
     position: fixed;  
     z-index: 1000;  
