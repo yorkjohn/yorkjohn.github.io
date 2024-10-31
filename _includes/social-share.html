@@ -3,64 +3,19 @@
 <section class="page__share">  
   <h4 class="page__share-title">Share On</h4>  
 
-  <a href="https://service.weibo.com/share/share.php?url={{ base_path }}{{ page.url }}" class="btn btn--weibo" target="_blank" title="Share on Weibo">  
-    <i class="fab fa-weibo" aria-hidden="true"></i><span> Weibo</span>  
+  <a href="https://service.weibo.com/share/share.php?url={{ base_path }}{{ page.url }}" class="btn btn--weibo" title="Share on Weibo">  
+    <i class="fab fa-fw fa-weibo" aria-hidden="true"></i><span> Weibo</span>  
   </a>  
 
-
-  <a href="javascript:void(0);" class="btn btn--wechat" title="Share on WeChat" onclick="showQRCode('{{ base_path }}{{ page.url }}')">  
-    <i class="fab fa-wechat" aria-hidden="true"></i><span> WeChat</span>  
+  <a href="javascript:void(0);" class="btn btn--wechat" title="Share on WeChat" onclick="shareToWeChat('{{ base_path }}{{ page.url }}')">  
+    <i class="fab fa-fw fa-wechat" aria-hidden="true"></i><span> WeChat</span>  
   </a>  
-
-
-  <div id="wechat-qr-modal" style="display:none;">  
-    <div class="modal-content">  
-      <span class="close" onclick="closeQRCode()">&times;</span>  
-      <h4>Scan to share on WeChat</h4>  
-      <img id="wechat-qr" src="" alt="WeChat QR Code" />  
-    </div>  
-  </div>  
 </section>  
 
 <script>  
-  
-  function showQRCode(url) {  
-    const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(url)}&size=200x200`;  
-    document.getElementById('wechat-qr').src = qrCodeUrl; 
-    document.getElementById('wechat-qr-modal').style.display = 'block'; 
+  function shareToWeChat(url) {  
+    // Create a WeChat sharing link  
+    alert("Please scan the QR code to share: " + url);  
+    // You can implement a QR code generation here or redirect to a QR code service  
   }  
-
-  function closeQRCode() {  
-    document.getElementById('wechat-qr-modal').style.display = 'none';  
-  }  
-</script>  
-
-<style>  
-
-  #wechat-qr-modal {  
-    position: fixed;  
-    z-index: 1000;  
-    left: 0;  
-    top: 0;  
-    width: 100%;  
-    height: 100%;  
-    background-color: rgba(0, 0, 0, 0.5);  
-    display: flex;  
-    justify-content: center;  
-    align-items: center;  
-  }  
-
-  .modal-content {  
-    background-color: #fff;  
-    padding: 20px;  
-    border-radius: 5px;  
-    text-align: center;  
-  }  
-
-  .close {  
-    color: #aaa;  
-    float: right;  
-    font-size: 28px;  
-    font-weight: bold;  
-  }  
-</style>
+</script>
