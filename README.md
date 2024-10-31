@@ -1,8 +1,4 @@
-*Edits by me (Huaijun Qiu) below. For [original README](https://github.com/academicpages/academicpages.github.io/blob/master/README.md) see [academicpages.github.io](https://github.com/academicpages/academicpages.github.io).*
 
-  
+For [original README](https://github.com/academicpages/academicpages.github.io/blob/master/README.md) see [academicpages.github.io](https://github.com/academicpages/academicpages.github.io).
 
-A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
-
-  
-
+This repository was created with the template of [weiglemc.github.io](https://github.com/weiglemc/weiglemc.github.io) and modified by me (Huaijun Qiu) to fit my personal website.  Thanks again to [Michele C. Weigle](https://weiglemc.github.io/) for her excellent work on the template.
