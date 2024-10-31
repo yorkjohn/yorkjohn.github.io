@@ -122,6 +122,9 @@
       {% if author.impactstory %}
         <li><a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw"></i> Impactstory</a></li>
       {% endif %}
+      {% if author.qq %}  
+        <li><a href="https://wpa.qq.com/msgrd?v=3&uin={{ author.qq }}&site=qq&menu=yes"><i class="fab fa-fw fa-qq" aria-hidden="true"></i> QQ</a></li>  
+      {% endif %}
       {% if author.wikipedia %}
         <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
       {% endif %}
