@@ -1,15 +1,68 @@
 {% include base_path %}
 
-<section class="page__share">
-  {% if site.data.ui-text[site.locale].share_on_label %}
-    <h4 class="page__share-title">{{ site.data.ui-text[site.locale].share_on_label | default: "Share on" }}</h4>
-  {% endif %}
+<section class="page__share">  
+  <h4 class="page__share-title">Share On</h4>  
 
-  <a href="https://tootpick.org/#text={{ base_path }}{{ page.url }}" class="btn btn--mastodon" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Mastodon"><i class="fab fa-fw fa-mastodon" aria-hidden="true"></i><span> Mastodon</span></a>
-  <!--
-  <a href="https://twitter.com/intent/tweet?text={{ base_path }}{{ page.url }}" class="btn btn--twitter" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Twitter"><i class="fab fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
--->
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ base_path }}{{ page.url }}" class="btn btn--facebook" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} Facebook"><i class="fab fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <!-- 新浪微博分享链接 -->  
+  <a href="https://service.weibo.com/share/share.php?url={{ base_path }}{{ page.url }}" class="btn btn--weibo" target="_blank" title="Share on Weibo">  
+    <i class="fab fa-weibo" aria-hidden="true"></i><span> Weibo</span>  
+  </a>  
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ base_path }}{{ page.url }}" class="btn btn--linkedin" title="{{ site.data.ui-text[site.locale].share_on_label | default: 'Share on' }} LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
+  <!-- 微信分享按钮 -->  
+  <a href="javascript:void(0);" class="btn btn--wechat" title="Share on WeChat" onclick="showQRCode('{{ base_path }}{{ page.url }}')">  
+    <i class="fab fa-wechat" aria-hidden="true"></i><span> WeChat</span>  
+  </a>  
+
+  <!-- 显示二维码的模态框 -->  
+  <div id="wechat-qr-modal" style="display:none;">  
+    <div class="modal-content">  
+      <span class="close" onclick="closeQRCode()">&times;</span>  
+      <h4>Scan to share on WeChat</h4>  
+      <img id="wechat-qr" src="" alt="WeChat QR Code" />  
+    </div>  
+  </div>  
+</section>  
+
+<script>  
+  // 显示二维码模态框  
+  function showQRCode(url) {  
+    const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(url)}&size=200x200`;  
+    document.getElementById('wechat-qr').src = qrCodeUrl; // 使用二维码 API 生成二维码  
+    document.getElementById('wechat-qr-modal').style.display = 'block'; // 显示模态框  
+  }  
+
+  // 关闭二维码模态框  
+  function closeQRCode() {  
+    document.getElementById('wechat-qr-modal').style.display = 'none';  
+  }  
+</script>  
+
+<style>  
+  /* 模态框样式 */  
+  #wechat-qr-modal {  
+    position: fixed;  
+    z-index: 1000;  
+    left: 0;  
+    top: 0;  
+    width: 100%;  
+    height: 100%;  
+    background-color: rgba(0, 0, 0, 0.5);  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+  }  
+
+  .modal-content {  
+    background-color: #fff;  
+    padding: 20px;  
+    border-radius: 5px;  
+    text-align: center;  
+  }  
+
+  .close {  
+    color: #aaa;  
+    float: right;  
+    font-size: 28px;  
+    font-weight: bold;  
+  }  
+</style>

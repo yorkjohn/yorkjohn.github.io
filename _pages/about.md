@@ -22,20 +22,17 @@ I am also a **senior technical advisor** and **R&D director** at [Shenyang P.T. 
 
 **Research Interests:** Reinforcement Learning, Graph Theory, Computer Vision  
 
-## News @ SAU  
 
-**Oct 2024**  
-- The **Undergraduate Thesis Project** is now open, and there are still vacancies.   
-- Contact me by email or QQ.  
-
-**Sep 2024**  
-- Welcome new students.  
-
-## News @ Industrial  
-
-**Oct 2024**  
-- **Jobs @ PTS** are available for experienced C# programmers.   
-- Find more information at [zhaopin.com](https://jobs.zhaopin.com/CC252170630J40655993510.htm?refcode=4021&srccode=402101&preactionid=d52a25ba-96fd-41bb-ac66-36eb9367118a).  
-
-**Aug 2024**  
-- **Tymo Tech Inc.** has moved to a new [address](https://map.baidu.com/poi/%E6%B2%88%E9%98%B3%E5%A4%A9%E7%9B%AE%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/@13750722.159588246,5109929.750711458,19z?uid=8b945f36f8acd9c24bcc4a83&ugc_type=3&ugc_ver=1&device_ratio=1&compat=1&pcevaname=pc4.1&querytype=detailConInfo&da_src=shareurl).
+ ---
+<section id="News">  
+    <h2>News</h2>  
+    <div class="blog-posts">  
+        {% assign recent_posts = site.posts | limit: 5 %}  <!-- Get the last 5 posts -->  
+        {% for post in recent_posts %}  
+            <article>  
+                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>  
+                <p>{{ post.excerpt }}</p>  <!-- Display the post excerpt -->  
+            </article>  
+        {% endfor %}  
+    </div>  
+</section>
