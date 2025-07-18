@@ -3,7 +3,7 @@
     "short_name": "",
     "icons": [
         {
-            "src": "/images/android-chrome-144x144.png?v=12345",
+            "src": "android-chrome-144x144.png?v=12345",
             "sizes": "144x144",
             "type": "image/png"
         }
