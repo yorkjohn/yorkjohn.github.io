@@ -18,7 +18,7 @@ I am the **founder** and **CEO** of [Shenyang Tymo Technology Co., Ltd.](https:/
 
 <!-- This is a comment: Over the past decade, we have developed several products, including a crowd flow statistical system, a video perimeter system, image-based fire detectors, and light-section smoke detectors, which are widely used in firefighting, public safety, and transportation. -->  
 
-I am also a **senior technical advisor** and **R&D director** at [Shenyang P.T. Security Technology Co., Ltd.](http://www.ptstec.cn) (abbreviated as PTS). PTS aims to become a professional manufacturer in the global industrial firefighting sector, and its research and production of temperature-sensing cable products are sold in over 30 countries.  
+I am also the **CTO** at [Shenyang P.T. Security Technology Co., Ltd.](http://www.ptstec.cn) (abbreviated as PTS). PTS aims to become a professional manufacturer in the global industrial firefighting sector, and its research and production of temperature-sensing cable products are sold in over 30 countries.  
 
 **Research Interests:** Reinforcement Learning, Graph Theory, Computer Vision  
 
