@@ -22,7 +22,7 @@ blogger-color: "#F37100"
 * Zuquan Sun (2023)  
 
 
-### Master's Degree (Co-advisor)   
+### Master's Degree (Co-supervised with [Prof. Cuiwei Liu](https://yjs.sau.edu.cn/info/1027/1167.htm))   
 
 * Zisheng Kang (2025)  
 * LiMing Wei (2025)  

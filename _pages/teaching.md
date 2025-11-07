@@ -7,6 +7,8 @@ author_profile: true
 ---
 {% include base_path %}
 
+**Fall 2025:** No lectures this semester.  
+
 **Spring 2025:** *Principles and Applications of Microcontroller C*   
 - **Lecturers**:  Tuesday 3rd-4th & Thursday 1st-2nd periods of Weeks 1-6; Room: Building 3-208; Class: Mechanical Engineering 2207/2208.  
 - **Experiments1**: Friday 1st-2nd periods of Weeks 5-8; Room: GongXun 301; Class: Mechanical Engineering 2207.  
