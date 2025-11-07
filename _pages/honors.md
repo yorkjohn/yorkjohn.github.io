@@ -63,6 +63,12 @@ blogger-color: "#F37100"
   Description: An embedded flame detection device that operates on a dual-band system for enhanced detection capabilities.
 
 ## Fundings  
+
+- **Development of a high-performance AI-based flame detection system**  
+  Amount: 200,000 CNY 
+  Year: 2025  
+  Description: integrating advanced vision algorithms and intelligent sensing for faster, more accurate fire identification.
+
 - **Research and Implementation of Drone Geolocation Based on Domestic Embedded Platforms**  
   Amount: 30,000 CNY 
   Year: 2023  
