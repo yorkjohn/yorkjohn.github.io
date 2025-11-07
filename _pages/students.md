@@ -13,19 +13,27 @@ blogger-color: "#F37100"
 
 ### Master's Degree  
 
-* Hanqi Li (2023)  
-* Zuquan Sun (2023)  
+* Jiajian Ling (2025)  
+* Qi Xu (2025)  
+* Haiyin Liu (2025)  
 * Wenjun Li (2024)  
 * Bowen Zhang (2024)  
+* Hanqi Li (2023)  
+* Zuquan Sun (2023)  
+
 
 ### Master's Degree (Co-advisor)   
 
-* Yujing Zhao (2023)  
-* Yuhao Xia (2023)  
-* Jing Zhou (2023)  
+* Zisheng Kang (2025)  
+* LiMing Wei (2025)  
+* Yi Ding (2025)  
 * Jingbo Zhang (2024)  
 * Yifan Jia (2024)  
 * Xuewei Min (2024)  
+* Yujing Zhao (2023)  
+* Yuhao Xia (2023)  
+* Jing Zhou (2023)  
+
 
 ## Former Students  
 
