@@ -7,6 +7,10 @@ author_profile: true
 ---
 {% include base_path %}
 
+**Spring 2026:** *Principles and Applications of Microcontroller C*   
+- **Lecturers**:  Tuesday 1st-2nd & Thursday 7th-8th periods of Weeks 1-6; Room: Building 3-236; Class: Mechanical Engineering 2305/2306.  
+- **Lecturers**:  Tuesday 3rd-4th & Thursday 5th-6th periods of Weeks 3-8; Room: Building 3-236; Class: Mechanical Engineering 2405/2406.  
+
 **Fall 2025:** No lectures this semester.  
 
 **Spring 2025:** *Principles and Applications of Microcontroller C*   
